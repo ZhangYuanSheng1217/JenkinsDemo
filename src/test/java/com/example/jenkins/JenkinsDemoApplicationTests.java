@@ -11,6 +11,7 @@ public class JenkinsDemoApplicationTests {
     
     @Test
     public void contextLoads() {
+        System.out.println("测试 >>> JenkinsDemoApplicationTests.contextLoads");
     }
     
 }
