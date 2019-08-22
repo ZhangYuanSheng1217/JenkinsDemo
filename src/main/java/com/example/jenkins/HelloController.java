@@ -37,7 +37,7 @@ public class HelloController {
     }
     
     @RequestMapping("other")
-    public String other() {
-        return "[当前时间]: " + new SimpleDateFormat(dateFormat).format(new Date());
+    public String other(HttpServletRequest request) {
+        return "[" + request.getMethod() + "]当前时间: " + new SimpleDateFormat(dateFormat).format(new Date());
     }
 }
