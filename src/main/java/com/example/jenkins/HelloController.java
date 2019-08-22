@@ -31,9 +31,9 @@ public class HelloController {
     @Value("${application.simple-date-format}")
     private String dateFormat;
     
-    @GetMapping(value = {"hello", "home"})
-    public String hello(HttpServletRequest request) {
-        return "This is [" + request.getRequestURI() + "]: Hello World!";
+    @GetMapping(value = "hello")
+    public String hello() {
+        return "Hello Jenkins!";
     }
     
     @RequestMapping("other")
