@@ -34,6 +34,6 @@ public class HelloController {
     
     @RequestMapping("other")
     public String other() {
-        return "当前时间: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date());
+        return "当前时间: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS a").format(new Date());
     }
 }
