@@ -31,9 +31,14 @@ public class HelloController {
     @Value("${application.simple-date-format}")
     private String dateFormat;
     
-    @GetMapping(value = "hello")
+    @GetMapping("hello")
     public String hello() {
         return "Hello Jenkins!";
+    }
+    
+    @GetMapping("home")
+    public String home() {
+        return "Jenkins自动化CI测试项目!";
     }
     
     @RequestMapping("other")
