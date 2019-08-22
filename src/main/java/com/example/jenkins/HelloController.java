@@ -13,6 +13,8 @@ package com.example.jenkins;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * description: 无
  *
@@ -22,8 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
     
-    @GetMapping("hello")
-    public String hello() {
-        return "This is [hello]: Hello World!";
+    @GetMapping(value = {"hello", "home"})
+    public String hello(HttpServletRequest request) {
+        return "This is [" + request.getRequestURI() + "]: Hello World!";
     }
 }
