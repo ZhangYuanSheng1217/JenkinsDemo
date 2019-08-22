@@ -10,6 +10,7 @@
  */
 package com.example.jenkins;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,11 @@ import java.util.Date;
 @RestController
 public class HelloController {
     
+    @Value("${application.simple-date-format}")
+    private String dateFormat;
+    
+    private SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+    
     @GetMapping(value = {"hello", "home"})
     public String hello(HttpServletRequest request) {
         return "This is [" + request.getRequestURI() + "]: Hello World!";
@@ -35,6 +41,6 @@ public class HelloController {
     
     @RequestMapping("other")
     public String other(@RequestHeader String path) {
-        return "[" + path + "]当前时间: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS a").format(new Date());
+        return "[" + path + "]当前时间: " + sdf.format(new Date());
     }
 }
