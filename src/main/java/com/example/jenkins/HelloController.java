@@ -11,9 +11,12 @@
 package com.example.jenkins;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * description: 无
@@ -27,5 +30,10 @@ public class HelloController {
     @GetMapping(value = {"hello", "home"})
     public String hello(HttpServletRequest request) {
         return "This is [" + request.getRequestURI() + "]: Hello World!";
+    }
+    
+    @RequestMapping("other")
+    public String other() {
+        return "当前时间: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:SS.SSS").format(new Date());
     }
 }
