@@ -12,7 +12,6 @@ package com.example.jenkins;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,7 +37,7 @@ public class HelloController {
     }
     
     @RequestMapping("other")
-    public String other(@RequestHeader String path) {
-        return "[" + path + "]当前时间: " + new SimpleDateFormat(dateFormat).format(new Date());
+    public String other() {
+        return "[当前时间]: " + new SimpleDateFormat(dateFormat).format(new Date());
     }
 }
