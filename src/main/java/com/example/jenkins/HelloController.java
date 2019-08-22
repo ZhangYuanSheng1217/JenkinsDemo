@@ -32,8 +32,6 @@ public class HelloController {
     @Value("${application.simple-date-format}")
     private String dateFormat;
     
-    private SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
-    
     @GetMapping(value = {"hello", "home"})
     public String hello(HttpServletRequest request) {
         return "This is [" + request.getRequestURI() + "]: Hello World!";
@@ -41,6 +39,6 @@ public class HelloController {
     
     @RequestMapping("other")
     public String other(@RequestHeader String path) {
-        return "[" + path + "]当前时间: " + sdf.format(new Date());
+        return "[" + path + "]当前时间: " + new SimpleDateFormat(dateFormat).format(new Date());
     }
 }
