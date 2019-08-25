@@ -38,7 +38,7 @@ public class HelloController {
     
     @GetMapping("home")
     public String home() {
-        return "Jenkins自动化CI测试项目! Welcome Home'Page!";
+        return "Jenkins自动化CI测试项目! Welcome Home'Page! [fix can't kill proc]";
     }
     
     @RequestMapping("other")
