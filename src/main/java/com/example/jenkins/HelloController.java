@@ -38,7 +38,7 @@ public class HelloController {
     
     @GetMapping("home")
     public String home() {
-        return "Jenkins自动化CI测试项目!";
+        return "Jenkins自动化CI测试项目! Welcome Home!!!";
     }
     
     @RequestMapping("other")
