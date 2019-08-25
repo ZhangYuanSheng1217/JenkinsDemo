@@ -10,7 +10,7 @@ else
     echo "正在停止SpringBoot项目: $JAR_NAME"
     pid=`ps -ef | grep "$JAR_NAME" | grep -v grep | awk '{print $2}'`
     if [ -n "$pid" ]; then
-       for N in "pid"
+       for N in $pid
        do
            echo "SpringBoot项目进程PID: $N"
            kill -9 $N
