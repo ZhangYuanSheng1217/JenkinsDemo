@@ -1,5 +1,5 @@
 #!/bin/bash
-#!/usr/bin/env bash
+
 # 将应用停止
 #stop.sh
 
@@ -11,7 +11,8 @@ else
     pid=`ps -ef | grep "$JAR_NAME" | grep -v grep | awk '{print $2}'`
     if [ -n "$pid" ]; then
        echo "SpringBoot项目进程PID: $pid"
-       sudo kill -9 $pid
+       kill -9 $pid
+       echo "[kill -9 $pid] >>> 执行完毕！"
     fi
     echo 'SpringBoot项目进程已杀死！'
 fi
