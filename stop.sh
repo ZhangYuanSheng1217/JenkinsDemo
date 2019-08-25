@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 将应用停止
+# 将应用停止 参数：JAR_NAME
 #stop.sh
 
 if [ ! -n "$1" ]; then
