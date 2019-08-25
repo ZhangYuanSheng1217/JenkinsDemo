@@ -4,7 +4,7 @@
 #stop.sh
 
 if [ ! -n "$1" ] ;then
-    echo "为检测到参数[\$1]，请重试！"
+    echo "[ERROR] >>> 未检测到参数[\$1]，请重试！"
 else
     NAME=$1
     echo "正在停止SpringBoot项目: $NAME"
